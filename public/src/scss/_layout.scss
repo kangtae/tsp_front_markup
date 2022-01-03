@@ -1,20 +1,38 @@
 
-.gnb{position:fixed; top:0; width:100%; bottom:0; background-color:$yellow;
-    transform: translateX(-120%); transition: transform 0.5s;
+.header{display:flex; position: absolute; top:0; left:0; width:100%; padding:calcRem(24rem) calcRem(16rem) 0; justify-content: space-between;
     $this:&;
-    &__list{margin:0; padding:0;}
+    box-sizing: border-box; z-index:150;
+    &__logo{margin:0; width:calcRem(52rem);}
+    &.is-active{
+        #{$this}__logo{visibility: hidden; pointer-events: none;}
+    }
+}
+.menu-btn{overflow:hidden; display:flex; width:calcRem(48rem); height:calcRem(48rem); background:$yellow; border:none; align-items: center; justify-content: center;
+    &__line{position:relative; display:inline-block; width:calcRem(18rem); height:calcRem(2rem); text-indent: -9999px; 
+        background-color: $black;
+        &:before,&:after{display:block; position: absolute; width:100%; height:calcRem(2rem); background-color:$black; content:'';}
+        &:before{top:calcRem(-6rem);}
+        &:after{bottom:calcRem(-6rem);}
+    }
+    &.is-active{background-color: $black;}
+}
+.gnb{position:fixed; top:0; width:100%; bottom:0; background-color:$yellow; transform: translateY(-100%); z-index: 100; transition: all 0.5s;
+    $this:&;
+    &.is-active{transform: translateY(0);}
+    &__wrap{position:absolute; top:50%; transform: translateY(-50%); padding:0 calcRem($sitePadding); box-sizing: border-box;}
+    &__list{margin:0; padding:0; list-style:none;}
+    &__item{
+        & + &{margin-top:calcRem(16rem);}
+    }
     &__link{@include h2();}
-    &.is-active{transform: translateX(0);}
-    &.type-1depth{z-index:$depth1Zindex;}
-    &.type-2depth{z-index:$depth2Zindex;;
-        .gnb-body{min-height:50%; height:auto;}
-        #{$this}__scroll{padding-bottom:calcRem(40rem); box-sizing:border-box;}
+}
+.gnb-sub{margin:calcRem(96rem) 0 0 0; padding:0; list-style: none;
+    &__item{
+        & + &{margin-top:calcRem(8rem);}
     }
-    &__scroll{position:relative; overflow:auto; width:100%; height:100%;}
-    &__close{overflow:hidden; display:block; position:absolute; top:calcRem(20rem); right: calcRem(-30rem); width:calcRem(16rem); height:calcRem(16rem); 
-        @include background('/images/common/close.png','no-repeat center center / contain'); text-decoration: none; text-indent: -9999px;
-    }
-    &__banner{
-        img{width:100%;}
+    &__link{position:relative; display:inline-block; padding-right:calcRem(23rem); @include body1();
+        &:after{position:absolute; top:0; bottom:0; right:0; margin:auto 0; display:block; width:calcRem(5rem); height:calcRem(8rem); content:'';
+            background: url('../images/common/gnb_arrow.png') no-repeat center center / contain;
+        }
     }
 }
