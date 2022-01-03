@@ -63,6 +63,8 @@
 @mixin h1(){font-size:calcRem(60rem); line-height:calclH(70,60); letter-spacing: $defaultLetter;}
 @mixin h2(){font-size:calcRem(40rem); line-height:calclH(54,40); letter-spacing: $defaultLetter;}
 @mixin h3(){font-size:calcRem(24rem); line-height:calclH(32,24); letter-spacing: $defaultLetter;}
+@mixin h4(){font-size:calcRem(20rem); line-height:calclH(27,20); letter-spacing: $defaultLetter;}
+
 
 @mixin body1(){font-size:calcRem(16rem); line-height:calclH(26,16); letter-spacing: $defaultLetter;}
 @mixin body2(){font-size:calcRem(14rem); line-height:calclH(24,14); letter-spacing: $defaultLetter;}

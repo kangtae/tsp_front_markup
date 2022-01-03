@@ -1,3 +1,6 @@
+body{
+    &.is-active{position: fixed; left:0; right:0;}
+}
 
 .header{display:flex; position: absolute; top:0; left:0; width:100%; padding:calcRem(24rem) calcRem(16rem) 0; justify-content: space-between;
     $this:&;
@@ -8,13 +11,20 @@
     }
 }
 .menu-btn{overflow:hidden; display:flex; width:calcRem(48rem); height:calcRem(48rem); background:$yellow; border:none; align-items: center; justify-content: center;
+    $this:&;
     &__line{position:relative; display:inline-block; width:calcRem(18rem); height:calcRem(2rem); text-indent: -9999px; 
         background-color: $black;
-        &:before,&:after{display:block; position: absolute; width:100%; height:calcRem(2rem); background-color:$black; content:'';}
+        &:before,&:after{display:block; position: absolute; width:100%; height:calcRem(2rem); background-color:$black; content:''; transition: transform 0.5s;}
         &:before{top:calcRem(-6rem);}
         &:after{bottom:calcRem(-6rem);}
     }
-    &.is-active{background-color: $black;}
+    &.is-active{background-color: $black;
+        #{$this}__line{background-color:$black;
+            &:before,&:after{background-color:$yellow}
+            &:before{top:0; transform: rotate(45deg);}
+            &:after{bottom:0;transform: rotate(-45deg);}
+        }
+    }
 }
 .gnb{position:fixed; top:0; width:100%; bottom:0; background-color:$yellow; transform: translateY(-100%); z-index: 100; transition: all 0.5s;
     $this:&;
@@ -36,3 +46,5 @@
         }
     }
 }
+
+.footer{padding:calcRem(20rem) calcRem(10rem); font-size:calcRem(10rem); line-height:calclH(20,10); background-color:$yellow; font-weight:normal; font-family: $font-kor; text-align: center;}
