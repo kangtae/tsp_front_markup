@@ -60,16 +60,16 @@
 @function calclH($lh,$font){
     @return ($lh/$font);
 }
-@mixin heading1(){font-size:calcRem(20rem); line-height:calclH(28,20); letter-spacing: $defaultLetter; font-weight:$medium;}
-@mixin heading2(){font-size:calcRem(17rem); line-height:calclH(24,17); letter-spacing: $defaultLetter; font-weight:$medium;}
+@mixin h1(){font-size:calcRem(60rem); line-height:calclH(70,60); letter-spacing: $defaultLetter;}
+@mixin h2(){font-size:calcRem(40rem); line-height:calclH(54,40); letter-spacing: $defaultLetter;}
+@mixin h3(){font-size:calcRem(24rem); line-height:calclH(32,24); letter-spacing: $defaultLetter;}
 
-@mixin title1(){font-size:calcRem(14rem); line-height:calclH(22,14); letter-spacing: $defaultLetter; font-weight:$medium;}
-@mixin title2(){font-size:calcRem(14rem); line-height:calclH(22,14); letter-spacing: $defaultLetter; font-weight:$regular;}
+@mixin body1(){font-size:calcRem(16rem); line-height:calclH(26,16); letter-spacing: $defaultLetter;}
+@mixin body2(){font-size:calcRem(14rem); line-height:calclH(24,14); letter-spacing: $defaultLetter;}
+@mixin body3(){font-size:calcRem(12rem); line-height:calclH(22,12); letter-spacing: $defaultLetter;}
 
-@mixin body1(){font-size:calcRem(14rem); line-height:calclH(22,14); letter-spacing: $defaultLetter; font-weight:$light;}
-@mixin body2(){font-size:calcRem(12rem); line-height:calclH(20,12); letter-spacing: $defaultLetter; font-weight:$medium;}
-@mixin body3(){font-size:calcRem(12rem); line-height:calclH(18,12); letter-spacing: $defaultLetter; font-weight:$light;}
-@mixin body4(){font-size:calcRem(10rem); line-height:calclH(16,10); letter-spacing: $defaultLetter; font-weight:$light;}
+
+
 
 
 
